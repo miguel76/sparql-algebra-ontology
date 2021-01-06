@@ -1,0 +1,57 @@
+'@base': https://w3id.org/sparql-algebra-ontology
+#spa: https://w3id.org/sparql-algebra-ontology#
+
+rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdfs: http://www.w3.org/2000/01/rdf-schema#
+owl: http://www.w3.org/2002/07/owl#
+xsd: http://www.w3.org/2001/XMLSchema#
+
+foaf: http://xmlns.com/foaf/0.1/
+dc: http://purl.org/dc/elements/1.1/
+dcterms: http://purl.org/dc/terms/
+skos: http://www.w3.org/2004/02/skos/core#
+vann: http://purl.org/vocab/vann/
+cc: http://web.resource.org/cc/
+
+sp: http://spinrdf.org/sp#
+
+id: '@id'
+type: '@type'
+subClassOf: {'@id': rdfs:subClassOf, '@type': '@id'}
+superClassOf: {'@reverse': rdfs:subClassOf, '@type': '@id' }
+subPropertyOf: {'@id': rdfs:subPropertyOf, '@type': '@id'}
+superPropertyOf: {'@reverse': rdfs:subPropertyOf, '@type': '@id'}
+domain: {'@id': rdfs:domain, '@type': '@id'}
+domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
+range: {'@id': rdfs:range, '@type': '@id'}
+rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
+
+onProperty: {'@id': owl:onProperty, '@type': '@id'}
+onClass: {'@id': owl:onClass, '@type': '@id'}
+qualifiedCardinality: {'@id': owl:qualifiedCardinality, '@type': 'xsd:nonNegativeInteger'}
+hasValue: {'@id': owl:hasValue}
+someValuesFromValue: {'@id': owl:someValuesFromValue, '@type': '@id'}
+allValuesFrom: {'@id': owl:allValuesFrom, '@type': '@id'}
+
+unionOf: {'@id': owl:unionOf, '@type': '@id'}
+disjointUnionOf: {'@id': owl:disjointUnionOf, '@type': '@id'}
+intersectionOf: {'@id': owl:intersectionOf, '@type': '@id'}
+equivalentClass: {'@id': owl:equivalentClass, '@type': '@id'}
+disjointWith: {'@id': owl:disjointWith, '@type': '@id'}
+
+inverseOf: {'@id': owl:inverseOf, '@type': '@id'}
+propertyChainAxiom: {'@id': owl:propertyChainAxiom, '@type': '@id'}
+
+versionInfo: owl:versionInfo
+maker: foaf:maker
+name: foaf:name
+defines: {'@reverse': rdfs:isDefinedBy, '@type': '@id'}
+preferredNamespaceUri: vann:preferredNamespaceUri
+preferredNamespacePrefix: vann:preferredNamespacePrefix
+
+label: rdfs:label
+comment: rdfs:comment
+descr: dcterms:description
+title: dcterms:title
+created: dcterms:created
+date: dcterms:date

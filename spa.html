@@ -1,0 +1,1226 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>SPARQL Algebra Ontology</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script>
+      var baseWebVOWL = 'http://visualdataweb.de/webvowl/#iri=';
+      function openInWebVOWL() {
+        window.open(baseWebVOWL + location.href.substr(0, location.href.lastIndexOf('/') + 1) + 'ontology.ttl');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SPARQL Algebra Ontology</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                View...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="javascript:openInWebVOWL()">...in WebVOWL</a>
+                <a class="dropdown-item" href="http://www.essepuntato.it/lode/owlapi/https://w3id.org/sparql-algebra-ontology">...in LODE</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Download...
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="spa.owl">...as XML/RDF</a>
+                <a class="dropdown-item" href="spa.ttl">...as Turtle</a>
+                <a class="dropdown-item" href="spa.jsonld">...as JSON-LD</a>
+                <a class="dropdown-item" href="spa.nt">...as N-Triples</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col">
+
+          <h1 id="top">SPARQL Algebra Ontology</h1>
+          <!-- <p class="lead">An RDF schema used to represent SPARQL algebra as RDF.
+</p> -->
+          <!-- <h2>Description</h2> -->
+
+          <p>
+            
+      <strong>Namespace URI</strong>: <code>https://w3id.org/sparql-algebra-ontology#</code>
+  <br/>
+            
+      <strong>Preferred Prefix</strong>: <code>spa:</code>
+  <br/>
+            
+      <strong>Version Info</strong>: Revision: 1.0.0
+  <br/>
+            
+      <strong>Authors</strong>:
+      <a href="mailto:miguel.ceriani@gmail.com">Miguel Ceriani</a>.
+  
+          </p>
+
+          <p>An RDF schema used to represent SPARQL algebra as RDF.
+</p>
+
+          <p>
+            
+      <strong>Classes</strong>:
+      <a href="#Aggregation">Aggregation</a>, <a href="#Op1">1-Arity Operation</a>, <a href="#BGP">BGP</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#Distinct">Distinct</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#Op">Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#Table">Table</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
+  
+          </p>
+          <p>
+            
+      <strong>Object Properties</strong>:
+      <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#rightOp">right subOperation</a>, <a href="#tuple">tuple</a>.
+  
+          </p>
+          <p>
+            
+      <strong>Datatype Properties</strong>:
+      <a href="ac:sampleRate">sample rate</a>.
+  
+          </p>
+
+          <h2 id="classList">Classes</h2>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Aggregation" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Aggregation</h3>
+                  <code>spa:Aggregation</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Aggregation operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Aggregation" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Aggregation</span>
+                      <small class="text-muted"><code>spa:Aggregation</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Aggregation operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Op1" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">1-Arity Operation</h3>
+                  <code>spa:Op1</code>
+                </div>
+                <div class="panel-body">
+                  
+                    A generic operation with arity one (a single other operation as input).
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+      <strong>Sub-Classes</strong>:
+      <a href="#Aggregation">Aggregation</a>, <a href="#Distinct">Distinct</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
+  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Op1" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">1-Arity Operation</span>
+                      <small class="text-muted"><code>spa:Op1</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        A generic operation with arity one (a single other operation as input).
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                      
+      <strong>Sub-Classes</strong>:
+      <a href="#Aggregation">Aggregation</a>, <a href="#Distinct">Distinct</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
+  
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="BGP" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">BGP</h3>
+                  <code>spa:BGP</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Basic Graph Pattern.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op0">0-Arity Operation</a>.
+  
+                  
+                  
+      <strong>Domain of</strong>:
+      <a href="#tuple">tuple</a>.
+  
+                  
+                </div>
+              </div> -->
+
+                <div id="BGP" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">BGP</span>
+                      <small class="text-muted"><code>spa:BGP</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Basic Graph Pattern.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op0">0-Arity Operation</a>.
+  
+                      
+                      
+      <strong>Domain of</strong>:
+      <a href="#tuple">tuple</a>.
+  
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Op0" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">0-Arity Operation</h3>
+                  <code>spa:Op0</code>
+                </div>
+                <div class="panel-body">
+                  
+                    A generic operation with arity zero (no other operations as inputs).
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+      <strong>Sub-Classes</strong>:
+      <a href="#BGP">BGP</a>, <a href="#Table">Table</a>.
+  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Op0" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">0-Arity Operation</span>
+                      <small class="text-muted"><code>spa:Op0</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        A generic operation with arity zero (no other operations as inputs).
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                      
+      <strong>Sub-Classes</strong>:
+      <a href="#BGP">BGP</a>, <a href="#Table">Table</a>.
+  
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Distinct" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Distinct</h3>
+                  <code>spa:Distinct</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Distinct operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Distinct" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Distinct</span>
+                      <small class="text-muted"><code>spa:Distinct</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Distinct operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Extend" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Extend</h3>
+                  <code>spa:Extend</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Extend operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Extend" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Extend</span>
+                      <small class="text-muted"><code>spa:Extend</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Extend operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Filter" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Filter</h3>
+                  <code>spa:Filter</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Filter operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Filter" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Filter</span>
+                      <small class="text-muted"><code>spa:Filter</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Filter operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Graph" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Graph</h3>
+                  <code>spa:Graph</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Graph operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Graph" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Graph</span>
+                      <small class="text-muted"><code>spa:Graph</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Graph operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Group" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Group</h3>
+                  <code>spa:Group</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Group operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Group" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Group</span>
+                      <small class="text-muted"><code>spa:Group</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Group operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Op" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Operation</h3>
+                  <code>spa:Op</code>
+                </div>
+                <div class="panel-body">
+                  
+                    A generic operation of SPARQL algebra.
+
+                  
+                  
+                  
+      <strong>Sub-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>.
+  
+                  
+      <strong>Domain of</strong>:
+      <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#rightOp">right subOperation</a>.
+  
+                  
+      <strong>Range of</strong>:
+      <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#rightOp">right subOperation</a>.
+  
+                </div>
+              </div> -->
+
+                <div id="Op" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Operation</span>
+                      <small class="text-muted"><code>spa:Op</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        A generic operation of SPARQL algebra.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+                      
+      <strong>Sub-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>.
+  
+                      
+      <strong>Domain of</strong>:
+      <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#rightOp">right subOperation</a>.
+  
+                      
+      <strong>Range of</strong>:
+      <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#rightOp">right subOperation</a>.
+  
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Op2" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">2-Arity Operation</h3>
+                  <code>spa:Op2</code>
+                </div>
+                <div class="panel-body">
+                  
+                    A generic operation with arity two (two other operations as inputs).
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Op2" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">2-Arity Operation</span>
+                      <small class="text-muted"><code>spa:Op2</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        A generic operation with arity two (two other operations as inputs).
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="OpN" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">N-Arity Operation</h3>
+                  <code>spa:OpN</code>
+                </div>
+                <div class="panel-body">
+                  
+                    A generic operation with unconstrained arity (any number of operations as inputs).
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="OpN" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">N-Arity Operation</span>
+                      <small class="text-muted"><code>spa:OpN</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        A generic operation with unconstrained arity (any number of operations as inputs).
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op">Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="OrderBy" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">OrderBy</h3>
+                  <code>spa:OrderBy</code>
+                </div>
+                <div class="panel-body">
+                  
+                    OrderBy operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="OrderBy" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">OrderBy</span>
+                      <small class="text-muted"><code>spa:OrderBy</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        OrderBy operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Project" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Project</h3>
+                  <code>spa:Project</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Project operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Project" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Project</span>
+                      <small class="text-muted"><code>spa:Project</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Project operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Reduced" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Reduced</h3>
+                  <code>spa:Reduced</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Reduced operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Reduced" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Reduced</span>
+                      <small class="text-muted"><code>spa:Reduced</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Reduced operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Slice" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Slice</h3>
+                  <code>spa:Slice</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Slice operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Slice" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Slice</span>
+                      <small class="text-muted"><code>spa:Slice</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Slice operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="Table" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Table</h3>
+                  <code>spa:Table</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Tabular data.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op0">0-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="Table" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Table</span>
+                      <small class="text-muted"><code>spa:Table</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Tabular data.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op0">0-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="ToList" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">ToList</h3>
+                  <code>spa:ToList</code>
+                </div>
+                <div class="panel-body">
+                  
+                    ToList operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="ToList" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">ToList</span>
+                      <small class="text-muted"><code>spa:ToList</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        ToList operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
+              <!-- <div id="ToMultiset" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">ToMultiset</h3>
+                  <code>spa:ToMultiset</code>
+                </div>
+                <div class="panel-body">
+                  
+                    ToMultiset operation.
+
+                  
+                  
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                  
+                  
+                  
+                </div>
+              </div> -->
+
+                <div id="ToMultiset" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">ToMultiset</span>
+                      <small class="text-muted"><code>spa:ToMultiset</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        ToMultiset operation.
+
+                      </p>
+                    
+                    <p class="card-text">
+                      
+      <strong>Super-Classes</strong>:
+      <a href="#Op1">1-Arity Operation</a>.
+  
+                      
+                      
+                      
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+
+          <h2 id="objPropList">Object properties</h2>
+          
+            <div id="leftOp" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">left subOperation</span>
+                  <small class="text-muted"><code>spa:leftOp</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Operation connected as left input.
+                  </p>
+                
+                <p class="card-text">
+                  
+      <strong>Super-Properties</strong>:
+      <a href="#subOp">subOperation</a>.
+  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Op">Operation</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="subOp" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">subOperation</span>
+                  <small class="text-muted"><code>spa:subOp</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Operation connected as input.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+      <strong>Sub-Properties</strong>:
+      <a href="#leftOp">left subOperation</a>, <a href="#rightOp">right subOperation</a>.
+  
+                  
+      <strong>Domain</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Op">Operation</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="rightOp" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">right subOperation</span>
+                  <small class="text-muted"><code>spa:rightOp</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Operation connected as right input.
+                  </p>
+                
+                <p class="card-text">
+                  
+      <strong>Super-Properties</strong>:
+      <a href="#subOp">subOperation</a>.
+  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Op">Operation</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Op">Operation</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="tuple" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">tuple</span>
+                  <small class="text-muted"><code>spa:tuple</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Triple Path or Triple Pattern.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#BGP">BGP</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://spinrdf.org/sp#Tuple">sp:Tuple</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+
+          <h2 id="dtPropList">Datatype properties</h2>
+          
+            <div id="ac:sampleRate" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">sample rate</span>
+                  <small class="text-muted"><code>ac:sampleRate</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Associates a digital signal to its sample rate.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+      <strong>Sub-Properties</strong>:
+      <a href="mo:sample_rate">mo:sample_rate</a>.
+  
+                  
+      <strong>Domain</strong>:
+      <a href="ac:DigitalSignal">ac:DigitalSignal</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "sparql-algebra-ontology",
+  "version": "1.0.0",
+  "description": "Package to generate the SPARQL Algebra Ontology",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguel76/sparql-algebra-ontology.git"
+  },
+  "author": "miguel.ceriani@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miguel76/sparql-algebra-ontology/issues"
+  },
+  "homepage": "https://github.com/miguel76/sparql-algebra-ontology#readme",
+  "devDependencies": {
+    "ejs": "^3.1.5",
+    "js-yaml": "^4.0.0",
+    "jsld": "^1.0.3",
+    "jsonld": "^3.2.0",
+    "lodash": "^4.17.20",
+    "path": "^0.12.7",
+    "rdflib": "^2.1.3"
+  }
+}

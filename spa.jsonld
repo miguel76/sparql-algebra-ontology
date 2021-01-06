@@ -1,0 +1,396 @@
+{
+   "@context": {
+      "@base": "https://w3id.org/sparql-algebra-ontology",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "dcterms": "http://purl.org/dc/terms/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "vann": "http://purl.org/vocab/vann/",
+      "cc": "http://web.resource.org/cc/",
+      "sp": "http://spinrdf.org/sp#",
+      "id": "@id",
+      "type": "@type",
+      "subClassOf": {
+         "@id": "rdfs:subClassOf",
+         "@type": "@id"
+      },
+      "superClassOf": {
+         "@reverse": "rdfs:subClassOf",
+         "@type": "@id"
+      },
+      "subPropertyOf": {
+         "@id": "rdfs:subPropertyOf",
+         "@type": "@id"
+      },
+      "superPropertyOf": {
+         "@reverse": "rdfs:subPropertyOf",
+         "@type": "@id"
+      },
+      "domain": {
+         "@id": "rdfs:domain",
+         "@type": "@id"
+      },
+      "domainOf": {
+         "@reverse": "rdfs:domain",
+         "@type": "@id"
+      },
+      "range": {
+         "@id": "rdfs:range",
+         "@type": "@id"
+      },
+      "rangeOf": {
+         "@reverse": "rdfs:range",
+         "@type": "@id"
+      },
+      "onProperty": {
+         "@id": "owl:onProperty",
+         "@type": "@id"
+      },
+      "onClass": {
+         "@id": "owl:onClass",
+         "@type": "@id"
+      },
+      "qualifiedCardinality": {
+         "@id": "owl:qualifiedCardinality",
+         "@type": "xsd:nonNegativeInteger"
+      },
+      "hasValue": {
+         "@id": "owl:hasValue"
+      },
+      "someValuesFromValue": {
+         "@id": "owl:someValuesFromValue",
+         "@type": "@id"
+      },
+      "allValuesFrom": {
+         "@id": "owl:allValuesFrom",
+         "@type": "@id"
+      },
+      "unionOf": {
+         "@id": "owl:unionOf",
+         "@type": "@id"
+      },
+      "disjointUnionOf": {
+         "@id": "owl:disjointUnionOf",
+         "@type": "@id"
+      },
+      "intersectionOf": {
+         "@id": "owl:intersectionOf",
+         "@type": "@id"
+      },
+      "equivalentClass": {
+         "@id": "owl:equivalentClass",
+         "@type": "@id"
+      },
+      "disjointWith": {
+         "@id": "owl:disjointWith",
+         "@type": "@id"
+      },
+      "inverseOf": {
+         "@id": "owl:inverseOf",
+         "@type": "@id"
+      },
+      "propertyChainAxiom": {
+         "@id": "owl:propertyChainAxiom",
+         "@type": "@id"
+      },
+      "versionInfo": "owl:versionInfo",
+      "maker": "foaf:maker",
+      "name": "foaf:name",
+      "defines": {
+         "@reverse": "rdfs:isDefinedBy",
+         "@type": "@id"
+      },
+      "preferredNamespaceUri": "vann:preferredNamespaceUri",
+      "preferredNamespacePrefix": "vann:preferredNamespacePrefix",
+      "label": "rdfs:label",
+      "comment": "rdfs:comment",
+      "descr": "dcterms:description",
+      "title": "dcterms:title",
+      "created": "dcterms:created",
+      "date": "dcterms:date"
+   },
+   "@graph": [
+      {
+         "id": "ac:sampleRate",
+         "type": [
+            "owl:DatatypeProperty",
+            "owl:FunctionalProperty"
+         ],
+         "comment": "Associates a digital signal to its sample rate.",
+         "domain": "ac:DigitalSignal",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "sample rate",
+         "range": "xsd:float"
+      },
+      {
+         "id": "sparql-algebra-ontology",
+         "type": "owl:Ontology",
+         "created": "2016/05/02",
+         "date": "2021/01/05",
+         "descr": "An RDF schema used to represent SPARQL algebra as RDF.\n",
+         "title": "SPARQL Algebra Ontology",
+         "preferredNamespacePrefix": "spa",
+         "preferredNamespaceUri": "https://w3id.org/sparql-algebra-ontology#",
+         "versionInfo": "Revision: 1.0.0",
+         "maker": {
+            "id": "mailto:miguel.ceriani@gmail.com"
+         }
+      },
+      {
+         "id": "#Aggregation",
+         "type": "owl:Class",
+         "comment": "Aggregation operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Aggregation",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#BGP",
+         "type": "owl:Class",
+         "comment": "Basic Graph Pattern.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "BGP",
+         "subClassOf": "#Op0"
+      },
+      {
+         "id": "#Distinct",
+         "type": "owl:Class",
+         "comment": "Distinct operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Distinct",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Extend",
+         "type": "owl:Class",
+         "comment": "Extend operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Extend",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Filter",
+         "type": "owl:Class",
+         "comment": "Filter operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Filter",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Graph",
+         "type": "owl:Class",
+         "comment": "Graph operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Graph",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Group",
+         "type": "owl:Class",
+         "comment": "Group operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Group",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Op",
+         "type": "owl:Class",
+         "comment": "A generic operation of SPARQL algebra.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Operation"
+      },
+      {
+         "id": "#Op0",
+         "type": "owl:Class",
+         "comment": "A generic operation with arity zero (no other operations as inputs).\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "0-Arity Operation",
+         "subClassOf": "#Op"
+      },
+      {
+         "id": "#Op1",
+         "type": "owl:Class",
+         "comment": "A generic operation with arity one (a single other operation as input).\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "1-Arity Operation",
+         "subClassOf": "#Op"
+      },
+      {
+         "id": "#Op2",
+         "type": "owl:Class",
+         "comment": "A generic operation with arity two (two other operations as inputs).\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "2-Arity Operation",
+         "subClassOf": "#Op"
+      },
+      {
+         "id": "#OpN",
+         "type": "owl:Class",
+         "comment": "A generic operation with unconstrained arity (any number of operations as inputs).\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "N-Arity Operation",
+         "subClassOf": "#Op"
+      },
+      {
+         "id": "#OrderBy",
+         "type": "owl:Class",
+         "comment": "OrderBy operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "OrderBy",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Project",
+         "type": "owl:Class",
+         "comment": "Project operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Project",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Reduced",
+         "type": "owl:Class",
+         "comment": "Reduced operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Reduced",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Slice",
+         "type": "owl:Class",
+         "comment": "Slice operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Slice",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Table",
+         "type": "owl:Class",
+         "comment": "Tabular data.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Table",
+         "subClassOf": "#Op0"
+      },
+      {
+         "id": "#ToList",
+         "type": "owl:Class",
+         "comment": "ToList operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "ToList",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#ToMultiset",
+         "type": "owl:Class",
+         "comment": "ToMultiset operation.\n",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "ToMultiset",
+         "subClassOf": "#Op1"
+      },
+      {
+         "id": "#leftOp",
+         "type": [
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "comment": "Operation connected as left input.",
+         "domain": "#Op",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "left subOperation",
+         "range": "#Op",
+         "subPropertyOf": "#subOp"
+      },
+      {
+         "id": "#rightOp",
+         "type": [
+            "owl:FunctionalProperty",
+            "owl:ObjectProperty"
+         ],
+         "comment": "Operation connected as right input.",
+         "domain": "#Op",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "right subOperation",
+         "range": "#Op",
+         "subPropertyOf": "#subOp"
+      },
+      {
+         "id": "#subOp",
+         "type": "owl:ObjectProperty",
+         "comment": "Operation connected as input.",
+         "domain": "#Op",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "subOperation",
+         "range": "#Op"
+      },
+      {
+         "id": "#tuple",
+         "type": "owl:ObjectProperty",
+         "comment": "Triple Path or Triple Pattern.",
+         "domain": "#BGP",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "tuple",
+         "range": "sp:Tuple"
+      },
+      {
+         "id": "mailto:miguel.ceriani@gmail.com",
+         "label": "Miguel Ceriani",
+         "name": "Miguel Ceriani"
+      },
+      {
+         "id": "mo:sample_rate",
+         "subPropertyOf": "ac:sampleRate"
+      }
+   ]
+}

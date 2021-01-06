@@ -1,0 +1,186 @@
+'@context':
+  - spa: https://w3id.org/sparql-algebra-ontology#
+id: ''
+type: owl:Ontology
+preferredNamespaceUri: https://w3id.org/sparql-algebra-ontology#
+preferredNamespacePrefix: spa
+created: 2016/05/02
+date: 2021/01/05
+descr: >
+  An RDF schema used to represent SPARQL algebra as RDF.
+title: SPARQL Algebra Ontology
+versionInfo: 'Revision: 1.0.0'
+maker:
+  - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
+defines:
+
+  - id: spa:Op
+    label: Operation
+    comment: >
+      A generic operation of SPARQL algebra.
+    type: owl:Class
+
+  - id: spa:subOp
+    label: subOperation
+    comment: Operation connected as input.
+    type: owl:ObjectProperty
+    domain: spa:Op
+    range: spa:Op
+
+  - id: spa:Op0
+    label: 0-Arity Operation
+    comment: >
+      A generic operation with arity zero (no other operations as inputs).
+    type: owl:Class
+    subClassOf: spa:Op
+
+  - id: spa:Op1
+    label: 1-Arity Operation
+    comment: >
+      A generic operation with arity one (a single other operation as input).
+    type: owl:Class
+    subClassOf: spa:Op
+
+  - id: spa:Op2
+    label: 2-Arity Operation
+    comment: >
+      A generic operation with arity two (two other operations as inputs).
+    type: owl:Class
+    subClassOf: spa:Op
+
+  - id: spa:leftOp
+    label: left subOperation
+    comment: Operation connected as left input.
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
+    subPropertyOf: spa:subOp
+    domain: spa:Op
+    range: spa:Op
+
+  - id: spa:rightOp
+    label: right subOperation
+    comment: Operation connected as right input.
+    type: [owl:ObjectProperty, owl:FunctionalProperty]
+    subPropertyOf: spa:subOp
+    domain: spa:Op
+    range: spa:Op
+
+  - id: spa:OpN
+    label: N-Arity Operation
+    comment: >
+      A generic operation with unconstrained arity (any number of operations as inputs).
+    type: owl:Class
+    subClassOf: spa:Op
+
+  - id: spa:Table
+    label: Table
+    comment: >
+      Tabular data.
+    type: owl:Class
+    subClassOf: spa:Op0
+
+  - id: spa:BGP
+    label: BGP
+    comment: >
+      Basic Graph Pattern.
+    type: owl:Class
+    subClassOf: spa:Op0
+
+  - id: spa:tuple
+    label: tuple
+    comment: Triple Path or Triple Pattern.
+    type: owl:ObjectProperty
+    domain: spa:BGP
+    range: sp:Tuple
+
+  - id: spa:Project
+    label: Project
+    comment: >
+      Project operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Aggregation
+    label: Aggregation
+    comment: >
+      Aggregation operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Distinct
+    label: Distinct
+    comment: >
+      Distinct operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Extend
+    label: Extend
+    comment: >
+      Extend operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Filter
+    label: Filter
+    comment: >
+      Filter operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Graph
+    label: Graph
+    comment: >
+      Graph operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Group
+    label: Group
+    comment: >
+      Group operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:OrderBy
+    label: OrderBy
+    comment: >
+      OrderBy operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Reduced
+    label: Reduced
+    comment: >
+      Reduced operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:Slice
+    label: Slice
+    comment: >
+      Slice operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:ToList
+    label: ToList
+    comment: >
+      ToList operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: spa:ToMultiset
+    label: ToMultiset
+    comment: >
+      ToMultiset operation.
+    type: owl:Class
+    subClassOf: spa:Op1
+
+  - id: ac:sampleRate
+    label: sample rate
+    comment: Associates a digital signal to its sample rate.
+    type: [owl:DatatypeProperty, owl:FunctionalProperty]
+    superPropertyOf: mo:sample_rate
+    domain: ac:DigitalSignal
+    range: xsd:float
+

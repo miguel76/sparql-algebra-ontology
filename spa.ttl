@@ -1,0 +1,192 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix w3i: <https://w3id.org/>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix terms: <http://purl.org/dc/terms/>.
+@prefix v: <http://purl.org/vocab/vann/>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix sp: <https://w3id.org/sparql-algebra-ontology#>.
+@prefix s: <http://spinrdf.org/sp#>.
+
+<ac:sampleRate>
+    a owl:DatatypeProperty, owl:FunctionalProperty;
+    rd:comment "Associates a digital signal to its sample rate.";
+    rd:domain <ac:DigitalSignal>;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "sample rate";
+    rd:range XML:float.
+w3i:sparql-algebra-ontology
+    a owl:Ontology;
+    terms:created "2016/05/02";
+    terms:date "2021/01/05";
+    terms:description
+        """An RDF schema used to represent SPARQL algebra as RDF.
+""";
+    terms:title "SPARQL Algebra Ontology";
+    v:preferredNamespacePrefix "spa";
+    v:preferredNamespaceUri "https://w3id.org/sparql-algebra-ontology#";
+    owl:versionInfo "Revision: 1.0.0";
+    n0:maker <mailto:miguel.ceriani@gmail.com>.
+sp:Aggregation
+    a owl:Class;
+    rd:comment
+        """Aggregation operation.
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Aggregation";
+    rd:subClassOf sp:Op1.
+sp:BGP
+    a owl:Class;
+    rd:comment
+        """Basic Graph Pattern.
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "BGP";
+    rd:subClassOf sp:Op0.
+sp:Distinct
+    a owl:Class;
+    rd:comment "Distinct operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Distinct";
+    rd:subClassOf sp:Op1.
+sp:Extend
+    a owl:Class;
+    rd:comment "Extend operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Extend";
+    rd:subClassOf sp:Op1.
+sp:Filter
+    a owl:Class;
+    rd:comment "Filter operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Filter";
+    rd:subClassOf sp:Op1.
+sp:Graph
+    a owl:Class;
+    rd:comment "Graph operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Graph";
+    rd:subClassOf sp:Op1.
+sp:Group
+    a owl:Class;
+    rd:comment "Group operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Group";
+    rd:subClassOf sp:Op1.
+sp:leftOp
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:comment "Operation connected as left input.";
+    rd:domain sp:Op;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "left subOperation";
+    rd:range sp:Op;
+    rd:subPropertyOf sp:subOp.
+sp:Op
+    a owl:Class;
+    rd:comment
+        """A generic operation of SPARQL algebra.
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Operation".
+sp:Op0
+    a owl:Class;
+    rd:comment
+        """A generic operation with arity zero (no other operations as inputs).
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "0-Arity Operation";
+    rd:subClassOf sp:Op.
+sp:Op1
+    a owl:Class;
+    rd:comment
+        """A generic operation with arity one (a single other operation as input).
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "1-Arity Operation";
+    rd:subClassOf sp:Op.
+sp:Op2
+    a owl:Class;
+    rd:comment
+        """A generic operation with arity two (two other operations as inputs).
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "2-Arity Operation";
+    rd:subClassOf sp:Op.
+sp:OpN
+    a owl:Class;
+    rd:comment
+        """A generic operation with unconstrained arity (any number of operations as inputs).
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "N-Arity Operation";
+    rd:subClassOf sp:Op.
+sp:OrderBy
+    a owl:Class;
+    rd:comment "OrderBy operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "OrderBy";
+    rd:subClassOf sp:Op1.
+sp:Project
+    a owl:Class;
+    rd:comment "Project operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Project";
+    rd:subClassOf sp:Op1.
+sp:Reduced
+    a owl:Class;
+    rd:comment "Reduced operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Reduced";
+    rd:subClassOf sp:Op1.
+sp:rightOp
+    a owl:FunctionalProperty, owl:ObjectProperty;
+    rd:comment "Operation connected as right input.";
+    rd:domain sp:Op;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "right subOperation";
+    rd:range sp:Op;
+    rd:subPropertyOf sp:subOp.
+sp:Slice
+    a owl:Class;
+    rd:comment "Slice operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Slice";
+    rd:subClassOf sp:Op1.
+sp:subOp
+    a owl:ObjectProperty;
+    rd:comment "Operation connected as input.";
+    rd:domain sp:Op;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "subOperation";
+    rd:range sp:Op.
+sp:Table
+    a owl:Class;
+    rd:comment "Tabular data.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Table";
+    rd:subClassOf sp:Op0.
+sp:ToList
+    a owl:Class;
+    rd:comment "ToList operation.\n";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "ToList";
+    rd:subClassOf sp:Op1.
+sp:ToMultiset
+    a owl:Class;
+    rd:comment
+        """ToMultiset operation.
+""";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "ToMultiset";
+    rd:subClassOf sp:Op1.
+sp:tuple
+    a owl:ObjectProperty;
+    rd:comment "Triple Path or Triple Pattern.";
+    rd:domain sp:BGP;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "tuple";
+    rd:range s:Tuple.
+<mailto:miguel.ceriani@gmail.com>
+rd:label "Miguel Ceriani"; n0:name "Miguel Ceriani".
+<mo:sample_rate> rd:subPropertyOf <ac:sampleRate>.
+

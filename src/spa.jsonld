@@ -1,0 +1,227 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sp": "http://spinrdf.org/sp#",
+    "@base": "http://meta-sparql.org/vocab/spa",
+    "superClassOf": {"@reverse": "owl:subClassOf", "@type": "@id"},
+    "superPropertyOf": {"@reverse": "owl:subPropertyOf", "@type": "@id"},
+    "domainOf": {"@reverse": "rdfs:domain", "@type": "@id"},
+    "domain": {"@id": "rdfs:domain", "@type": "@id"},
+    "range": {"@id": "rdfs:range", "@type": "@id"},
+    "label": "rdfs:label",
+    "comment": "rdfs:comment"
+  },
+  "@graph": [
+    {
+      "@id": "",
+      "@type": "owl:Ontology",
+      "label": "RDF Syntax for SPARQL Algebra",
+      "comment": "An RDF schema used to represent SPARQL Algebra as RDF.",
+      "owl:versionInfo": "1.0.0"
+    },
+    {
+      "@id": "#Op",
+      "@type": "owl:Class",
+      "label": "Generic Operation",
+      "domainOf": {
+        "@id": "#subOp",
+        "label": "Generic Suboperation",
+        "@type": "owl:ObjectProperty",
+        "range": "#Op",
+        "superPropertyOf": [
+          {
+            "@id": "#leftOp",
+            "label": "Left Suboperation"
+          },
+          {
+            "@id": "#rightOp",
+            "label": "Right Suboperation"
+          } ]
+      },
+      "superClassOf": [
+        {
+          "@id": "#Op0",
+          "label": "Operation with Arity 0",
+          "superClassOf": [
+            {
+              "@id": "#Table",
+              "label": "Table"
+            },
+            {
+              "@id": "#BGP",
+              "label": "Basic Graph Pattern",
+              "domainOf": {
+                "@id": "#tuple",
+                "label": "Triple Path or Triple Pattern",
+                "range": "sp:Tuple" }
+            } ]
+        },
+        {
+          "@id": "#Op1",
+          "label": "Operation with Arity 1",
+          "superClassOf": [
+            {
+              "@id": "#Project",
+              "label": "Project",
+              "domainOf": {
+                "@id": "#projectedVariable",
+                "label": "Projected Variable"
+              }
+            },
+            {
+              "@id": "#Aggregation",
+              "label": "Aggregation",
+              "domainOf": [
+                {
+                  "@id": "#aggrExprList",
+                  "label": "Expression List for Aggregation",
+                  "range": "rdf:List"
+                },
+                {
+                  "@id": "#aggrSetFunction",
+                  "label": "Set Function for Aggregation"
+                },
+                {
+                  "@id": "#aggrScalar",
+                  "label": "Scalar for Aggregation",
+                  "range": {
+                    "@id": "#Scalar",
+                    "@type": "owl:Class",
+                    "label": "Scalar for Aggregation",
+                    "domainOf": [
+                      {
+                        "@id": "#scalarName",
+                        "label": "Scalar Name",
+                        "range": "xsd:string"
+                      },
+                      {
+                        "@id": "#scalarValue",
+                        "label": "Scalar Value",
+                        "range": "xsd:string"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "@id": "#Distinct",
+              "label": "Distinct"
+            },
+            {
+              "@id": "#Extend",
+              "label": "Extend",
+              "domainOf": {
+                "@id": "#bind",
+                "label": "Bind introduced in Extend",
+                "range": "sp:Bind" }
+            },
+            {
+              "@id": "#Filter",
+              "label": "Filter",
+              "domainOf": {
+                "@id": "#expr",
+                "label": "Expression for Filter" }
+            },
+            {
+              "@id": "#Graph",
+              "label": "Graph",
+              "domainOf": {
+                "@id": "#graphSource",
+                "label": "Graph Source",
+                "range": {
+                  "@id": "#GraphSource",
+                  "@type": "owl:Class",
+                  "label": "Graph Source",
+                  "superClassOf": [
+                    {
+                      "@id": "#NamedGraphSource",
+                      "label": "Named Graph Source",
+                      "domainOf": {
+                        "@id": "#graphName",
+                        "label": "Name of the Graph",
+                        "range": "xsd:anyURI"
+                      }
+                    },
+                    {
+                      "@id": "#GraphUnion",
+                      "label": "Graph Union",
+                      "domainOf": {
+                        "@id": "#fromGraphSource",
+                        "label": "Graph Source for Union",
+                        "range": "#GraphSource"
+                      }
+                    },
+                    {
+                      "@id": "#Construct",
+                      "label": "CONSTRUCT Query",
+                      "domainOf": {
+                        "@id": "#templateTriple",
+                        "label": "Construct Template Triple",
+                        "range": "sp:Triple"
+                      }
+                    } ]
+                }
+              }
+            },
+            {
+              "@id": "#Group",
+              "label": "Group",
+              "domainOf": {
+                "@id": "#groupExpression",
+                "label": "Group Expression" }
+            },
+            {
+              "@id": "#OrderBy",
+              "label": "OrderBy",
+              "domainOf": {
+                "@id": "#orderByConditions",
+                "label": "List of OrderBy Conditions",
+                "range": "rdf:List"
+              }
+            },
+            {
+              "@id": "#Reduced",
+              "label": "Reduced"
+            },
+            {
+              "@id": "#Slice",
+              "label": "Slice",
+              "domainOf": [
+                {
+                  "@id": "#sliceLength",
+                  "label": "Length of Slice",
+                  "range": "xsd:integer"
+                },
+                {
+                  "@id": "#sliceStart",
+                  "label": "Start of Slice",
+                  "range": "xsd:integer"
+                } ]},
+            {
+              "@id": "#ToList",
+              "label": "ToList"
+            },
+            {
+              "@id": "#ToMultiSet",
+              "label": "ToMultiSet"
+            } ]
+        },
+        {
+          "@id": "#Op2",
+          "label": "Operation with Arity 2",
+          "superClassOf": [ {"@id": "#LeftJoin"}, {"@id": "#Minus"} ],
+          "domainOf": ["#leftOp", "#rightOp"]
+        },
+        {
+          "@id": "#OpN",
+          "label": "Operation with Arity N",
+          "superClassOf": [
+            {"@id": "#Union"}, {"@id": "#AggregateJoin"}, {"@id": "#Join"} ]
+        }
+      ]
+    }
+  ]
+}

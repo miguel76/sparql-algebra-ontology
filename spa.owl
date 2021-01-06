@@ -1,0 +1,222 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:rd="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:terms="http://purl.org/dc/terms/"
+ xmlns:v="http://purl.org/vocab/vann/"
+ xmlns:owl="http://www.w3.org/2002/07/owl#"
+ xmlns:n0="http://xmlns.com/foaf/0.1/">
+    <rdf:Description rdf:about="ac:sampleRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rd:comment>Associates a digital signal to its sample rate.</rd:comment>
+        <rd:domain rdf:resource="ac:DigitalSignal"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>sample rate</rd:label>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology">
+        <terms:created>2016/05/02</terms:created>
+        <terms:date>2021/01/05</terms:date>
+        <terms:description>An RDF schema used to represent SPARQL algebra as RDF.
+</terms:description>
+        <terms:title>SPARQL Algebra Ontology</terms:title>
+        <v:preferredNamespacePrefix>spa</v:preferredNamespacePrefix>
+        <v:preferredNamespaceUri>https://w3id.org/sparql-algebra-ontology#</v:preferredNamespaceUri>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+        <owl:versionInfo>Revision: 1.0.0</owl:versionInfo>
+        <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Aggregation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Aggregation operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Aggregation</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#BGP">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Basic Graph Pattern.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>BGP</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op0"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Distinct">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Distinct operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Distinct</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Extend">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Extend operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Extend</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Filter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Filter operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Filter</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Graph">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Graph operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Graph</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Group">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Group operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Group</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#leftOp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Operation connected as left input.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>left subOperation</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/sparql-algebra-ontology#subOp"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Op">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A generic operation of SPARQL algebra.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Operation</rd:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Op0">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A generic operation with arity zero (no other operations as inputs).
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>0-Arity Operation</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Op1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A generic operation with arity one (a single other operation as input).
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>1-Arity Operation</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Op2">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A generic operation with arity two (two other operations as inputs).
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>2-Arity Operation</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#OpN">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>A generic operation with unconstrained arity (any number of operations as inputs).
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>N-Arity Operation</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#OrderBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>OrderBy operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>OrderBy</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Project">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Project operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Project</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Reduced">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Reduced operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Reduced</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#rightOp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Operation connected as right input.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>right subOperation</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+        <rd:subPropertyOf rdf:resource="https://w3id.org/sparql-algebra-ontology#subOp"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Slice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Slice operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Slice</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#subOp">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Operation connected as input.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>subOperation</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Op"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Table">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Tabular data.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Table</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op0"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#ToList">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>ToList operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>ToList</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#ToMultiset">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>ToMultiset operation.
+</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>ToMultiset</rd:label>
+        <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#tuple">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Triple Path or Triple Pattern.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#BGP"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>tuple</rd:label>
+        <rd:range rdf:resource="http://spinrdf.org/sp#Tuple"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="mailto:miguel.ceriani@gmail.com">
+       <rd:label>Miguel Ceriani</rd:label><n0:name>Miguel Ceriani</n0:name>
+    </rdf:Description>
+    <rdf:Description rdf:about="mo:sample_rate">
+       <rd:subPropertyOf rdf:resource="ac:sampleRate"/>
+    </rdf:Description>
+</rdf:RDF>
