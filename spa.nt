@@ -8,6 +8,10 @@
 <https://w3id.org/sparql-algebra-ontology#BGP> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
 <https://w3id.org/sparql-algebra-ontology#BGP> <http://www.w3.org/2000/01/rdf-schema#label> "BGP" .
 <https://w3id.org/sparql-algebra-ontology#BGP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sparql-algebra-ontology#Op0> .
+<https://w3id.org/sparql-algebra-ontology#BoundAggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sparql-algebra-ontology#BoundAggregate> <http://www.w3.org/2000/01/rdf-schema#comment> "Pair variable-expression corresponding to a variable bound to an aggregation expression." .
+<https://w3id.org/sparql-algebra-ontology#BoundAggregate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#BoundAggregate> <http://www.w3.org/2000/01/rdf-schema#label> "Bound aggregate" .
 <https://w3id.org/sparql-algebra-ontology#Distinct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/sparql-algebra-ontology#Distinct> <http://www.w3.org/2000/01/rdf-schema#comment> "Distinct operation.\n" .
 <https://w3id.org/sparql-algebra-ontology#Distinct> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
@@ -96,18 +100,30 @@
 <https://w3id.org/sparql-algebra-ontology#ToMultiset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
 <https://w3id.org/sparql-algebra-ontology#ToMultiset> <http://www.w3.org/2000/01/rdf-schema#label> "ToMultiset" .
 <https://w3id.org/sparql-algebra-ontology#ToMultiset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sparql-algebra-ontology#Op1> .
-<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Expression corresponding to an aggregate value for each group." .
-<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Aggregation> .
-<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
-<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#label> "aggregation expression" .
-<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
 <https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Expression assigned to the bound variable by an extend operation." .
 <https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Extend> .
 <https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
 <https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#label> "assigned expression" .
 <https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregate> <http://www.w3.org/2000/01/rdf-schema#comment> "Pair variable-expression corresponding to a variable bound to an aggregate value for each group." .
+<https://w3id.org/sparql-algebra-ontology#boundAggregate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Aggregation> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregate> <http://www.w3.org/2000/01/rdf-schema#label> "bound aggregate" .
+<https://w3id.org/sparql-algebra-ontology#boundAggregate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#BoundAggregate> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Aggregate expression to be bound to a variable." .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#BoundAggregate> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateExpression> <http://www.w3.org/2000/01/rdf-schema#label> "bound aggregate expression" .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "Variable bound to an aggregate value." .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#BoundAggregate> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateVariable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateVariable> <http://www.w3.org/2000/01/rdf-schema#label> "bound aggregate variable" .
+<https://w3id.org/sparql-algebra-ontology#boundAggregateVariable> <http://www.w3.org/2000/01/rdf-schema#range> <http://spinrdf.org/sp#Variable> .
 <https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "The variable bound by an extend operation." .
 <https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Extend> .
@@ -161,7 +177,7 @@
 <https://w3id.org/sparql-algebra-ontology#tuple> <http://www.w3.org/2000/01/rdf-schema#label> "tuple" .
 <https://w3id.org/sparql-algebra-ontology#tuple> <http://www.w3.org/2000/01/rdf-schema#range> <http://spinrdf.org/sp#Tuple> .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/created> "2016/05/02" .
-<https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/date> "2021/01/05" .
+<https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/date> "2021/01/11" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/description> "An RDF schema used to represent SPARQL algebra as RDF.\n" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/title> "SPARQL Algebra Ontology" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/vocab/vann/preferredNamespacePrefix> "spa" .

@@ -10,7 +10,7 @@
 w3i:sparql-algebra-ontology
     a owl:Ontology;
     terms:created "2016/05/02";
-    terms:date "2021/01/05";
+    terms:date "2021/01/11";
     terms:description
         """An RDF schema used to represent SPARQL algebra as RDF.
 """;
@@ -27,13 +27,6 @@ sp:Aggregation
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "Aggregation";
     rd:subClassOf sp:Op1.
-sp:aggregationExpression
-    a owl:ObjectProperty;
-    rd:comment "Expression corresponding to an aggregate value for each group.";
-    rd:domain sp:Aggregation;
-    rd:isDefinedBy w3i:sparql-algebra-ontology;
-    rd:label "aggregation expression";
-    rd:range sp:Expression.
 sp:assignedExpression
     a owl:ObjectProperty;
     rd:comment
@@ -50,6 +43,34 @@ sp:BGP
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "BGP";
     rd:subClassOf sp:Op0.
+sp:boundAggregate
+    a owl:ObjectProperty;
+    rd:comment
+        "Pair variable-expression corresponding to a variable bound to an aggregate value for each group.";
+    rd:domain sp:Aggregation;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "bound aggregate";
+    rd:range sp:BoundAggregate.
+sp:BoundAggregate
+    a owl:Class;
+    rd:comment
+        "Pair variable-expression corresponding to a variable bound to an aggregation expression.";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "Bound aggregate".
+sp:boundAggregateExpression
+    a owl:ObjectProperty;
+    rd:comment "Aggregate expression to be bound to a variable.";
+    rd:domain sp:BoundAggregate;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "bound aggregate expression";
+    rd:range sp:Expression.
+sp:boundAggregateVariable
+    a owl:ObjectProperty;
+    rd:comment "Variable bound to an aggregate value.";
+    rd:domain sp:BoundAggregate;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "bound aggregate variable";
+    rd:range s:Variable.
 sp:boundVariable
     a owl:ObjectProperty;
     rd:comment "The variable bound by an extend operation.";

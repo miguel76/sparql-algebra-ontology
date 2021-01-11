@@ -77,13 +77,13 @@
           <p>
             
       <strong>Classes</strong>:
-      <a href="#Aggregation">Aggregation</a>, <a href="#Op1">1-Arity Operation</a>, <a href="#BGP">BGP</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#Distinct">Distinct</a>, <a href="#Expression">expression</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#Op">Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#Table">Table</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
+      <a href="#Aggregation">Aggregation</a>, <a href="#Op1">1-Arity Operation</a>, <a href="#BGP">BGP</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#BoundAggregate">Bound aggregate</a>, <a href="#Distinct">Distinct</a>, <a href="#Expression">expression</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#Op">Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#Table">Table</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
   
           </p>
           <p>
             
       <strong>Object Properties</strong>:
-      <a href="#aggregationExpression">aggregation expression</a>, <a href="#assignedExpression">assigned expression</a>, <a href="#boundVariable">bound variable</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>, <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#projectedVariable">projected variable</a>, <a href="#rightOp">right subOperation</a>, <a href="#tuple">tuple</a>.
+      <a href="#assignedExpression">assigned expression</a>, <a href="#boundAggregate">bound aggregate</a>, <a href="#boundAggregateExpression">bound aggregate expression</a>, <a href="#boundAggregateVariable">bound aggregate variable</a>, <a href="#boundVariable">bound variable</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>, <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#projectedVariable">projected variable</a>, <a href="#rightOp">right subOperation</a>, <a href="#tuple">tuple</a>.
   
           </p>
           <p>
@@ -113,7 +113,7 @@
                   
                   
       <strong>Domain of</strong>:
-      <a href="#aggregationExpression">aggregation expression</a>, <a href="#groupingExpression">grouping expression</a>.
+      <a href="#boundAggregate">bound aggregate</a>, <a href="#groupingExpression">grouping expression</a>.
   
                   
                 </div>
@@ -141,7 +141,7 @@
                       
                       
       <strong>Domain of</strong>:
-      <a href="#aggregationExpression">aggregation expression</a>, <a href="#groupingExpression">grouping expression</a>.
+      <a href="#boundAggregate">bound aggregate</a>, <a href="#groupingExpression">grouping expression</a>.
   
                       
                     </p>
@@ -316,6 +316,59 @@
             </div></div>
           
             <div class="row"><div class="col-12">
+              <!-- <div id="BoundAggregate" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Bound aggregate</h3>
+                  <code>spa:BoundAggregate</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Pair variable-expression corresponding to a variable bound to an aggregation expression.
+                  
+                  
+                  
+                  
+      <strong>Domain of</strong>:
+      <a href="#boundAggregateExpression">bound aggregate expression</a>, <a href="#boundAggregateVariable">bound aggregate variable</a>.
+  
+                  
+      <strong>Range of</strong>:
+      <a href="#boundAggregate">bound aggregate</a>.
+  
+                </div>
+              </div> -->
+
+                <div id="BoundAggregate" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">Bound aggregate</span>
+                      <small class="text-muted"><code>spa:BoundAggregate</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Pair variable-expression corresponding to a variable bound to an aggregation expression.
+                      </p>
+                    
+                    <p class="card-text">
+                      
+                      
+                      
+      <strong>Domain of</strong>:
+      <a href="#boundAggregateExpression">bound aggregate expression</a>, <a href="#boundAggregateVariable">bound aggregate variable</a>.
+  
+                      
+      <strong>Range of</strong>:
+      <a href="#boundAggregate">bound aggregate</a>.
+  
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
               <!-- <div id="Distinct" class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Distinct</h3>
@@ -379,7 +432,7 @@
                   
                   
       <strong>Range of</strong>:
-      <a href="#aggregationExpression">aggregation expression</a>, <a href="#assignedExpression">assigned expression</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>.
+      <a href="#assignedExpression">assigned expression</a>, <a href="#boundAggregateExpression">bound aggregate expression</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>.
   
                 </div>
               </div> -->
@@ -403,7 +456,7 @@
                       
                       
       <strong>Range of</strong>:
-      <a href="#aggregationExpression">aggregation expression</a>, <a href="#assignedExpression">assigned expression</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>.
+      <a href="#assignedExpression">assigned expression</a>, <a href="#boundAggregateExpression">bound aggregate expression</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>.
   
                     </p>
                   </div>
@@ -1130,34 +1183,6 @@
 
           <h2 id="objPropList">Object properties</h2>
           
-            <div id="aggregationExpression" class="card mb-3">
-              <div class="card-header">
-                <h5 class="mb-0">
-                  <span class="mr-2">aggregation expression</span>
-                  <small class="text-muted"><code>spa:aggregationExpression</code></small>
-                </h5>
-              </div>
-              <div class="card-body">
-                
-                  <p class="card-text">
-                    Expression corresponding to an aggregate value for each group.
-                  </p>
-                
-                <p class="card-text">
-                  
-                  
-                  
-      <strong>Domain</strong>:
-      <a href="#Aggregation">Aggregation</a>.
-  
-                  
-      <strong>Range</strong>:
-      <a href="#Expression">expression</a>.
-  
-                </p>
-              </div>
-            </div>
-          
             <div id="assignedExpression" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -1181,6 +1206,90 @@
                   
       <strong>Range</strong>:
       <a href="#Expression">expression</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="boundAggregate" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">bound aggregate</span>
+                  <small class="text-muted"><code>spa:boundAggregate</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Pair variable-expression corresponding to a variable bound to an aggregate value for each group.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Aggregation">Aggregation</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#BoundAggregate">Bound aggregate</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="boundAggregateExpression" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">bound aggregate expression</span>
+                  <small class="text-muted"><code>spa:boundAggregateExpression</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Aggregate expression to be bound to a variable.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#BoundAggregate">Bound aggregate</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Expression">expression</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="boundAggregateVariable" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">bound aggregate variable</span>
+                  <small class="text-muted"><code>spa:boundAggregateVariable</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Variable bound to an aggregate value.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#BoundAggregate">Bound aggregate</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://spinrdf.org/sp#Variable">sp:Variable</a>.
   
                 </p>
               </div>

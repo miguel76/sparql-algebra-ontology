@@ -118,7 +118,7 @@
          "id": "sparql-algebra-ontology",
          "type": "owl:Ontology",
          "created": "2016/05/02",
-         "date": "2021/01/05",
+         "date": "2021/01/11",
          "descr": "An RDF schema used to represent SPARQL algebra as RDF.\n",
          "title": "SPARQL Algebra Ontology",
          "preferredNamespacePrefix": "spa",
@@ -147,6 +147,15 @@
          },
          "label": "BGP",
          "subClassOf": "#Op0"
+      },
+      {
+         "id": "#BoundAggregate",
+         "type": "owl:Class",
+         "comment": "Pair variable-expression corresponding to a variable bound to an aggregation expression.",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "Bound aggregate"
       },
       {
          "id": "#Distinct",
@@ -327,17 +336,6 @@
          "subClassOf": "#Op1"
       },
       {
-         "id": "#aggregationExpression",
-         "type": "owl:ObjectProperty",
-         "comment": "Expression corresponding to an aggregate value for each group.",
-         "domain": "#Aggregation",
-         "rdfs:isDefinedBy": {
-            "id": "sparql-algebra-ontology"
-         },
-         "label": "aggregation expression",
-         "range": "#Expression"
-      },
-      {
          "id": "#assignedExpression",
          "type": "owl:ObjectProperty",
          "comment": "Expression assigned to the bound variable by an extend operation.",
@@ -347,6 +345,39 @@
          },
          "label": "assigned expression",
          "range": "#Expression"
+      },
+      {
+         "id": "#boundAggregate",
+         "type": "owl:ObjectProperty",
+         "comment": "Pair variable-expression corresponding to a variable bound to an aggregate value for each group.",
+         "domain": "#Aggregation",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "bound aggregate",
+         "range": "#BoundAggregate"
+      },
+      {
+         "id": "#boundAggregateExpression",
+         "type": "owl:ObjectProperty",
+         "comment": "Aggregate expression to be bound to a variable.",
+         "domain": "#BoundAggregate",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "bound aggregate expression",
+         "range": "#Expression"
+      },
+      {
+         "id": "#boundAggregateVariable",
+         "type": "owl:ObjectProperty",
+         "comment": "Variable bound to an aggregate value.",
+         "domain": "#BoundAggregate",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "bound aggregate variable",
+         "range": "sp:Variable"
       },
       {
          "id": "#boundVariable",

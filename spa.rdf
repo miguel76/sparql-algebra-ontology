@@ -7,7 +7,7 @@
  xmlns:rd="http://www.w3.org/2000/01/rdf-schema#">
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology">
         <terms:created>2016/05/02</terms:created>
-        <terms:date>2021/01/05</terms:date>
+        <terms:date>2021/01/11</terms:date>
         <terms:description>An RDF schema used to represent SPARQL algebra as RDF.
 </terms:description>
         <terms:title>SPARQL Algebra Ontology</terms:title>
@@ -25,14 +25,6 @@
         <rd:label>Aggregation</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#aggregationExpression">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-        <rd:comment>Expression corresponding to an aggregate value for each group.</rd:comment>
-        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Aggregation"/>
-        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
-        <rd:label>aggregation expression</rd:label>
-        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Expression"/>
-    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#assignedExpression">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rd:comment>Expression assigned to the bound variable by an extend operation.</rd:comment>
@@ -48,6 +40,36 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
         <rd:label>BGP</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op0"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#boundAggregate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Pair variable-expression corresponding to a variable bound to an aggregate value for each group.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Aggregation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>bound aggregate</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#BoundAggregate"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#BoundAggregate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Pair variable-expression corresponding to a variable bound to an aggregation expression.</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>Bound aggregate</rd:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#boundAggregateExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Aggregate expression to be bound to a variable.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#BoundAggregate"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>bound aggregate expression</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Expression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#boundAggregateVariable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Variable bound to an aggregate value.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#BoundAggregate"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>bound aggregate variable</rd:label>
+        <rd:range rdf:resource="http://spinrdf.org/sp#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#boundVariable">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

@@ -5,7 +5,7 @@ type: owl:Ontology
 preferredNamespaceUri: https://w3id.org/sparql-algebra-ontology#
 preferredNamespacePrefix: spa
 created: 2016/05/02
-date: 2021/01/05
+date: 2021/01/11
 descr: >
   An RDF schema used to represent SPARQL algebra as RDF.
 title: SPARQL Algebra Ontology
@@ -120,11 +120,30 @@ defines:
     domain: spa:Aggregation
     range: spa:Expression
 
-  - id: spa:aggregationExpression
-    label: aggregation expression
-    comment: Expression corresponding to an aggregate value for each group.
+  - id: spa:boundAggregate
+    label: bound aggregate
+    comment: Pair variable-expression corresponding to a variable bound to an aggregate value for each group.
     type: owl:ObjectProperty
     domain: spa:Aggregation
+    range: spa:BoundAggregate
+
+  - id: spa:BoundAggregate
+    label: Bound aggregate
+    comment: Pair variable-expression corresponding to a variable bound to an aggregation expression.
+    type: owl:Class
+
+  - id: spa:boundAggregateVariable
+    label: bound aggregate variable
+    comment: Variable bound to an aggregate value.
+    type: owl:ObjectProperty
+    domain: spa:BoundAggregate
+    range: sp:Variable
+
+  - id: spa:boundAggregateExpression
+    label: bound aggregate expression
+    comment: Aggregate expression to be bound to a variable.
+    type: owl:ObjectProperty
+    domain: spa:BoundAggregate
     range: spa:Expression
 
   - id: spa:Distinct
