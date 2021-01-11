@@ -1,10 +1,3 @@
-<ac:sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<ac:sampleRate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<ac:sampleRate> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates a digital signal to its sample rate." .
-<ac:sampleRate> <http://www.w3.org/2000/01/rdf-schema#domain> <ac:DigitalSignal> .
-<ac:sampleRate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
-<ac:sampleRate> <http://www.w3.org/2000/01/rdf-schema#label> "sample rate" .
-<ac:sampleRate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <https://w3id.org/sparql-algebra-ontology#Aggregation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/sparql-algebra-ontology#Aggregation> <http://www.w3.org/2000/01/rdf-schema#comment> "Aggregation operation.\n" .
 <https://w3id.org/sparql-algebra-ontology#Aggregation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
@@ -20,6 +13,10 @@
 <https://w3id.org/sparql-algebra-ontology#Distinct> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
 <https://w3id.org/sparql-algebra-ontology#Distinct> <http://www.w3.org/2000/01/rdf-schema#label> "Distinct" .
 <https://w3id.org/sparql-algebra-ontology#Distinct> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sparql-algebra-ontology#Op1> .
+<https://w3id.org/sparql-algebra-ontology#Expression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/sparql-algebra-ontology#Expression> <http://www.w3.org/2000/01/rdf-schema#comment> "Generic expression." .
+<https://w3id.org/sparql-algebra-ontology#Expression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#Expression> <http://www.w3.org/2000/01/rdf-schema#label> "expression" .
 <https://w3id.org/sparql-algebra-ontology#Extend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/sparql-algebra-ontology#Extend> <http://www.w3.org/2000/01/rdf-schema#comment> "Extend operation.\n" .
 <https://w3id.org/sparql-algebra-ontology#Extend> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
@@ -99,6 +96,36 @@
 <https://w3id.org/sparql-algebra-ontology#ToMultiset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
 <https://w3id.org/sparql-algebra-ontology#ToMultiset> <http://www.w3.org/2000/01/rdf-schema#label> "ToMultiset" .
 <https://w3id.org/sparql-algebra-ontology#ToMultiset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/sparql-algebra-ontology#Op1> .
+<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Expression corresponding to an aggregate value for each group." .
+<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Aggregation> .
+<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#label> "aggregation expression" .
+<https://w3id.org/sparql-algebra-ontology#aggregationExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
+<https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Expression assigned to the bound variable by an extend operation." .
+<https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Extend> .
+<https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#label> "assigned expression" .
+<https://w3id.org/sparql-algebra-ontology#assignedExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
+<https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "The variable bound by an extend operation." .
+<https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Extend> .
+<https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#label> "bound variable" .
+<https://w3id.org/sparql-algebra-ontology#boundVariable> <http://www.w3.org/2000/01/rdf-schema#range> <http://spinrdf.org/sp#Variable> .
+<https://w3id.org/sparql-algebra-ontology#filterExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#filterExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Expression used for filter." .
+<https://w3id.org/sparql-algebra-ontology#filterExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Filter> .
+<https://w3id.org/sparql-algebra-ontology#filterExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#filterExpression> <http://www.w3.org/2000/01/rdf-schema#label> "filter expression" .
+<https://w3id.org/sparql-algebra-ontology#filterExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
+<https://w3id.org/sparql-algebra-ontology#groupingExpression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#groupingExpression> <http://www.w3.org/2000/01/rdf-schema#comment> "Each expression used for grouping." .
+<https://w3id.org/sparql-algebra-ontology#groupingExpression> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Aggregation> .
+<https://w3id.org/sparql-algebra-ontology#groupingExpression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#groupingExpression> <http://www.w3.org/2000/01/rdf-schema#label> "grouping expression" .
+<https://w3id.org/sparql-algebra-ontology#groupingExpression> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Expression> .
 <https://w3id.org/sparql-algebra-ontology#leftOp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/sparql-algebra-ontology#leftOp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sparql-algebra-ontology#leftOp> <http://www.w3.org/2000/01/rdf-schema#comment> "Operation connected as left input." .
@@ -107,6 +134,12 @@
 <https://w3id.org/sparql-algebra-ontology#leftOp> <http://www.w3.org/2000/01/rdf-schema#label> "left subOperation" .
 <https://w3id.org/sparql-algebra-ontology#leftOp> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/sparql-algebra-ontology#Op> .
 <https://w3id.org/sparql-algebra-ontology#leftOp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/sparql-algebra-ontology#subOp> .
+<https://w3id.org/sparql-algebra-ontology#projectedVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/sparql-algebra-ontology#projectedVariable> <http://www.w3.org/2000/01/rdf-schema#comment> "Projected variable." .
+<https://w3id.org/sparql-algebra-ontology#projectedVariable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/sparql-algebra-ontology#Project> .
+<https://w3id.org/sparql-algebra-ontology#projectedVariable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
+<https://w3id.org/sparql-algebra-ontology#projectedVariable> <http://www.w3.org/2000/01/rdf-schema#label> "projected variable" .
+<https://w3id.org/sparql-algebra-ontology#projectedVariable> <http://www.w3.org/2000/01/rdf-schema#range> <http://spinrdf.org/sp#Variable> .
 <https://w3id.org/sparql-algebra-ontology#rightOp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/sparql-algebra-ontology#rightOp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/sparql-algebra-ontology#rightOp> <http://www.w3.org/2000/01/rdf-schema#comment> "Operation connected as right input." .
@@ -134,8 +167,7 @@
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/vocab/vann/preferredNamespacePrefix> "spa" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/sparql-algebra-ontology#" .
 <https://w3id.org/sparql-algebra-ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/sparql-algebra-ontology> <http://www.w3.org/2002/07/owl#versionInfo> "Revision: 1.0.0" .
+<https://w3id.org/sparql-algebra-ontology> <http://www.w3.org/2002/07/owl#versionInfo> "Revision: 1.1.0" .
 <https://w3id.org/sparql-algebra-ontology> <http://xmlns.com/foaf/0.1/maker> <mailto:miguel.ceriani@gmail.com> .
 <mailto:miguel.ceriani@gmail.com> <http://www.w3.org/2000/01/rdf-schema#label> "Miguel Ceriani" .
 <mailto:miguel.ceriani@gmail.com> <http://xmlns.com/foaf/0.1/name> "Miguel Ceriani" .
-<mo:sample_rate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <ac:sampleRate> .

@@ -1,19 +1,10 @@
 <rdf:RDF
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
- xmlns:rd="http://www.w3.org/2000/01/rdf-schema#"
  xmlns:terms="http://purl.org/dc/terms/"
  xmlns:v="http://purl.org/vocab/vann/"
  xmlns:owl="http://www.w3.org/2002/07/owl#"
- xmlns:n0="http://xmlns.com/foaf/0.1/">
-    <rdf:Description rdf:about="ac:sampleRate">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rd:comment>Associates a digital signal to its sample rate.</rd:comment>
-        <rd:domain rdf:resource="ac:DigitalSignal"/>
-        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
-        <rd:label>sample rate</rd:label>
-        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    </rdf:Description>
+ xmlns:n0="http://xmlns.com/foaf/0.1/"
+ xmlns:rd="http://www.w3.org/2000/01/rdf-schema#">
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology">
         <terms:created>2016/05/02</terms:created>
         <terms:date>2021/01/05</terms:date>
@@ -23,7 +14,7 @@
         <v:preferredNamespacePrefix>spa</v:preferredNamespacePrefix>
         <v:preferredNamespaceUri>https://w3id.org/sparql-algebra-ontology#</v:preferredNamespaceUri>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-        <owl:versionInfo>Revision: 1.0.0</owl:versionInfo>
+        <owl:versionInfo>Revision: 1.1.0</owl:versionInfo>
         <n0:maker rdf:resource="mailto:miguel.ceriani@gmail.com"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Aggregation">
@@ -34,6 +25,22 @@
         <rd:label>Aggregation</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#aggregationExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Expression corresponding to an aggregate value for each group.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Aggregation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>aggregation expression</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Expression"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#assignedExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Expression assigned to the bound variable by an extend operation.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Extend"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>assigned expression</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Expression"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#BGP">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:comment>Basic Graph Pattern.
@@ -42,6 +49,14 @@
         <rd:label>BGP</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op0"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#boundVariable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>The variable bound by an extend operation.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Extend"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>bound variable</rd:label>
+        <rd:range rdf:resource="http://spinrdf.org/sp#Variable"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Distinct">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:comment>Distinct operation.
@@ -49,6 +64,12 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
         <rd:label>Distinct</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Expression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rd:comment>Generic expression.</rd:comment>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>expression</rd:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Extend">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -66,6 +87,14 @@
         <rd:label>Filter</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
     </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#filterExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Expression used for filter.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Filter"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>filter expression</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Expression"/>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Graph">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
         <rd:comment>Graph operation.
@@ -81,6 +110,14 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
         <rd:label>Group</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#groupingExpression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Each expression used for grouping.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Aggregation"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>grouping expression</rd:label>
+        <rd:range rdf:resource="https://w3id.org/sparql-algebra-ontology#Expression"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#leftOp">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -146,6 +183,14 @@
         <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
         <rd:label>Project</rd:label>
         <rd:subClassOf rdf:resource="https://w3id.org/sparql-algebra-ontology#Op1"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#projectedVariable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:comment>Projected variable.</rd:comment>
+        <rd:domain rdf:resource="https://w3id.org/sparql-algebra-ontology#Project"/>
+        <rd:isDefinedBy rdf:resource="https://w3id.org/sparql-algebra-ontology"/>
+        <rd:label>projected variable</rd:label>
+        <rd:range rdf:resource="http://spinrdf.org/sp#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology#Reduced">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -215,8 +260,5 @@
     </rdf:Description>
     <rdf:Description rdf:about="mailto:miguel.ceriani@gmail.com">
        <rd:label>Miguel Ceriani</rd:label><n0:name>Miguel Ceriani</n0:name>
-    </rdf:Description>
-    <rdf:Description rdf:about="mo:sample_rate">
-       <rd:subPropertyOf rdf:resource="ac:sampleRate"/>
     </rdf:Description>
 </rdf:RDF>

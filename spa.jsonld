@@ -115,20 +115,6 @@
    },
    "@graph": [
       {
-         "id": "ac:sampleRate",
-         "type": [
-            "owl:DatatypeProperty",
-            "owl:FunctionalProperty"
-         ],
-         "comment": "Associates a digital signal to its sample rate.",
-         "domain": "ac:DigitalSignal",
-         "rdfs:isDefinedBy": {
-            "id": "sparql-algebra-ontology"
-         },
-         "label": "sample rate",
-         "range": "xsd:float"
-      },
-      {
          "id": "sparql-algebra-ontology",
          "type": "owl:Ontology",
          "created": "2016/05/02",
@@ -137,7 +123,7 @@
          "title": "SPARQL Algebra Ontology",
          "preferredNamespacePrefix": "spa",
          "preferredNamespaceUri": "https://w3id.org/sparql-algebra-ontology#",
-         "versionInfo": "Revision: 1.0.0",
+         "versionInfo": "Revision: 1.1.0",
          "maker": {
             "id": "mailto:miguel.ceriani@gmail.com"
          }
@@ -171,6 +157,15 @@
          },
          "label": "Distinct",
          "subClassOf": "#Op1"
+      },
+      {
+         "id": "#Expression",
+         "type": "owl:Class",
+         "comment": "Generic expression.",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "expression"
       },
       {
          "id": "#Extend",
@@ -332,6 +327,61 @@
          "subClassOf": "#Op1"
       },
       {
+         "id": "#aggregationExpression",
+         "type": "owl:ObjectProperty",
+         "comment": "Expression corresponding to an aggregate value for each group.",
+         "domain": "#Aggregation",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "aggregation expression",
+         "range": "#Expression"
+      },
+      {
+         "id": "#assignedExpression",
+         "type": "owl:ObjectProperty",
+         "comment": "Expression assigned to the bound variable by an extend operation.",
+         "domain": "#Extend",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "assigned expression",
+         "range": "#Expression"
+      },
+      {
+         "id": "#boundVariable",
+         "type": "owl:ObjectProperty",
+         "comment": "The variable bound by an extend operation.",
+         "domain": "#Extend",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "bound variable",
+         "range": "sp:Variable"
+      },
+      {
+         "id": "#filterExpression",
+         "type": "owl:ObjectProperty",
+         "comment": "Expression used for filter.",
+         "domain": "#Filter",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "filter expression",
+         "range": "#Expression"
+      },
+      {
+         "id": "#groupingExpression",
+         "type": "owl:ObjectProperty",
+         "comment": "Each expression used for grouping.",
+         "domain": "#Aggregation",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "grouping expression",
+         "range": "#Expression"
+      },
+      {
          "id": "#leftOp",
          "type": [
             "owl:FunctionalProperty",
@@ -345,6 +395,17 @@
          "label": "left subOperation",
          "range": "#Op",
          "subPropertyOf": "#subOp"
+      },
+      {
+         "id": "#projectedVariable",
+         "type": "owl:ObjectProperty",
+         "comment": "Projected variable.",
+         "domain": "#Project",
+         "rdfs:isDefinedBy": {
+            "id": "sparql-algebra-ontology"
+         },
+         "label": "projected variable",
+         "range": "sp:Variable"
       },
       {
          "id": "#rightOp",
@@ -387,10 +448,6 @@
          "id": "mailto:miguel.ceriani@gmail.com",
          "label": "Miguel Ceriani",
          "name": "Miguel Ceriani"
-      },
-      {
-         "id": "mo:sample_rate",
-         "subPropertyOf": "ac:sampleRate"
       }
    ]
 }

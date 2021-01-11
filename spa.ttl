@@ -1,20 +1,12 @@
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix w3i: <https://w3id.org/>.
-@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix terms: <http://purl.org/dc/terms/>.
 @prefix v: <http://purl.org/vocab/vann/>.
 @prefix n0: <http://xmlns.com/foaf/0.1/>.
 @prefix sp: <https://w3id.org/sparql-algebra-ontology#>.
+@prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix s: <http://spinrdf.org/sp#>.
 
-<ac:sampleRate>
-    a owl:DatatypeProperty, owl:FunctionalProperty;
-    rd:comment "Associates a digital signal to its sample rate.";
-    rd:domain <ac:DigitalSignal>;
-    rd:isDefinedBy w3i:sparql-algebra-ontology;
-    rd:label "sample rate";
-    rd:range XML:float.
 w3i:sparql-algebra-ontology
     a owl:Ontology;
     terms:created "2016/05/02";
@@ -25,7 +17,7 @@ w3i:sparql-algebra-ontology
     terms:title "SPARQL Algebra Ontology";
     v:preferredNamespacePrefix "spa";
     v:preferredNamespaceUri "https://w3id.org/sparql-algebra-ontology#";
-    owl:versionInfo "Revision: 1.0.0";
+    owl:versionInfo "Revision: 1.1.0";
     n0:maker <mailto:miguel.ceriani@gmail.com>.
 sp:Aggregation
     a owl:Class;
@@ -35,6 +27,21 @@ sp:Aggregation
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "Aggregation";
     rd:subClassOf sp:Op1.
+sp:aggregationExpression
+    a owl:ObjectProperty;
+    rd:comment "Expression corresponding to an aggregate value for each group.";
+    rd:domain sp:Aggregation;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "aggregation expression";
+    rd:range sp:Expression.
+sp:assignedExpression
+    a owl:ObjectProperty;
+    rd:comment
+    "Expression assigned to the bound variable by an extend operation.";
+    rd:domain sp:Extend;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "assigned expression";
+    rd:range sp:Expression.
 sp:BGP
     a owl:Class;
     rd:comment
@@ -43,12 +50,24 @@ sp:BGP
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "BGP";
     rd:subClassOf sp:Op0.
+sp:boundVariable
+    a owl:ObjectProperty;
+    rd:comment "The variable bound by an extend operation.";
+    rd:domain sp:Extend;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "bound variable";
+    rd:range s:Variable.
 sp:Distinct
     a owl:Class;
     rd:comment "Distinct operation.\n";
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "Distinct";
     rd:subClassOf sp:Op1.
+sp:Expression
+    a owl:Class;
+    rd:comment "Generic expression.";
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "expression".
 sp:Extend
     a owl:Class;
     rd:comment "Extend operation.\n";
@@ -61,6 +80,13 @@ sp:Filter
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "Filter";
     rd:subClassOf sp:Op1.
+sp:filterExpression
+    a owl:ObjectProperty;
+    rd:comment "Expression used for filter.";
+    rd:domain sp:Filter;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "filter expression";
+    rd:range sp:Expression.
 sp:Graph
     a owl:Class;
     rd:comment "Graph operation.\n";
@@ -73,6 +99,13 @@ sp:Group
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "Group";
     rd:subClassOf sp:Op1.
+sp:groupingExpression
+    a owl:ObjectProperty;
+    rd:comment "Each expression used for grouping.";
+    rd:domain sp:Aggregation;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "grouping expression";
+    rd:range sp:Expression.
 sp:leftOp
     a owl:FunctionalProperty, owl:ObjectProperty;
     rd:comment "Operation connected as left input.";
@@ -132,6 +165,13 @@ sp:Project
     rd:isDefinedBy w3i:sparql-algebra-ontology;
     rd:label "Project";
     rd:subClassOf sp:Op1.
+sp:projectedVariable
+    a owl:ObjectProperty;
+    rd:comment "Projected variable.";
+    rd:domain sp:Project;
+    rd:isDefinedBy w3i:sparql-algebra-ontology;
+    rd:label "projected variable";
+    rd:range s:Variable.
 sp:Reduced
     a owl:Class;
     rd:comment "Reduced operation.\n";
@@ -188,5 +228,3 @@ sp:tuple
     rd:range s:Tuple.
 <mailto:miguel.ceriani@gmail.com>
 rd:label "Miguel Ceriani"; n0:name "Miguel Ceriani".
-<mo:sample_rate> rd:subPropertyOf <ac:sampleRate>.
-

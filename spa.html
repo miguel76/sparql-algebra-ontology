@@ -63,7 +63,7 @@
       <strong>Preferred Prefix</strong>: <code>spa:</code>
   <br/>
             
-      <strong>Version Info</strong>: Revision: 1.0.0
+      <strong>Version Info</strong>: Revision: 1.1.0
   <br/>
             
       <strong>Authors</strong>:
@@ -77,19 +77,19 @@
           <p>
             
       <strong>Classes</strong>:
-      <a href="#Aggregation">Aggregation</a>, <a href="#Op1">1-Arity Operation</a>, <a href="#BGP">BGP</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#Distinct">Distinct</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#Op">Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#Table">Table</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
+      <a href="#Aggregation">Aggregation</a>, <a href="#Op1">1-Arity Operation</a>, <a href="#BGP">BGP</a>, <a href="#Op0">0-Arity Operation</a>, <a href="#Distinct">Distinct</a>, <a href="#Expression">expression</a>, <a href="#Extend">Extend</a>, <a href="#Filter">Filter</a>, <a href="#Graph">Graph</a>, <a href="#Group">Group</a>, <a href="#Op">Operation</a>, <a href="#Op2">2-Arity Operation</a>, <a href="#OpN">N-Arity Operation</a>, <a href="#OrderBy">OrderBy</a>, <a href="#Project">Project</a>, <a href="#Reduced">Reduced</a>, <a href="#Slice">Slice</a>, <a href="#Table">Table</a>, <a href="#ToList">ToList</a>, <a href="#ToMultiset">ToMultiset</a>.
   
           </p>
           <p>
             
       <strong>Object Properties</strong>:
-      <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#rightOp">right subOperation</a>, <a href="#tuple">tuple</a>.
+      <a href="#aggregationExpression">aggregation expression</a>, <a href="#assignedExpression">assigned expression</a>, <a href="#boundVariable">bound variable</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>, <a href="#leftOp">left subOperation</a>, <a href="#subOp">subOperation</a>, <a href="#projectedVariable">projected variable</a>, <a href="#rightOp">right subOperation</a>, <a href="#tuple">tuple</a>.
   
           </p>
           <p>
             
       <strong>Datatype Properties</strong>:
-      <a href="ac:sampleRate">sample rate</a>.
+      .
   
           </p>
 
@@ -112,6 +112,9 @@
   
                   
                   
+      <strong>Domain of</strong>:
+      <a href="#aggregationExpression">aggregation expression</a>, <a href="#groupingExpression">grouping expression</a>.
+  
                   
                 </div>
               </div> -->
@@ -137,6 +140,9 @@
   
                       
                       
+      <strong>Domain of</strong>:
+      <a href="#aggregationExpression">aggregation expression</a>, <a href="#groupingExpression">grouping expression</a>.
+  
                       
                     </p>
                   </div>
@@ -359,6 +365,53 @@
             </div></div>
           
             <div class="row"><div class="col-12">
+              <!-- <div id="Expression" class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">expression</h3>
+                  <code>spa:Expression</code>
+                </div>
+                <div class="panel-body">
+                  
+                    Generic expression.
+                  
+                  
+                  
+                  
+                  
+      <strong>Range of</strong>:
+      <a href="#aggregationExpression">aggregation expression</a>, <a href="#assignedExpression">assigned expression</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>.
+  
+                </div>
+              </div> -->
+
+                <div id="Expression" class="card mb-3">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <span class="mr-2">expression</span>
+                      <small class="text-muted"><code>spa:Expression</code></small>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    
+                      <p class="card-text">
+                        Generic expression.
+                      </p>
+                    
+                    <p class="card-text">
+                      
+                      
+                      
+                      
+      <strong>Range of</strong>:
+      <a href="#aggregationExpression">aggregation expression</a>, <a href="#assignedExpression">assigned expression</a>, <a href="#filterExpression">filter expression</a>, <a href="#groupingExpression">grouping expression</a>.
+  
+                    </p>
+                  </div>
+                </div>
+
+            </div></div>
+          
+            <div class="row"><div class="col-12">
               <!-- <div id="Extend" class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">Extend</h3>
@@ -375,6 +428,9 @@
   
                   
                   
+      <strong>Domain of</strong>:
+      <a href="#assignedExpression">assigned expression</a>, <a href="#boundVariable">bound variable</a>.
+  
                   
                 </div>
               </div> -->
@@ -400,6 +456,9 @@
   
                       
                       
+      <strong>Domain of</strong>:
+      <a href="#assignedExpression">assigned expression</a>, <a href="#boundVariable">bound variable</a>.
+  
                       
                     </p>
                   </div>
@@ -424,6 +483,9 @@
   
                   
                   
+      <strong>Domain of</strong>:
+      <a href="#filterExpression">filter expression</a>.
+  
                   
                 </div>
               </div> -->
@@ -449,6 +511,9 @@
   
                       
                       
+      <strong>Domain of</strong>:
+      <a href="#filterExpression">filter expression</a>.
+  
                       
                     </p>
                   </div>
@@ -779,6 +844,9 @@
   
                   
                   
+      <strong>Domain of</strong>:
+      <a href="#projectedVariable">projected variable</a>.
+  
                   
                 </div>
               </div> -->
@@ -804,6 +872,9 @@
   
                       
                       
+      <strong>Domain of</strong>:
+      <a href="#projectedVariable">projected variable</a>.
+  
                       
                     </p>
                   </div>
@@ -1059,6 +1130,146 @@
 
           <h2 id="objPropList">Object properties</h2>
           
+            <div id="aggregationExpression" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">aggregation expression</span>
+                  <small class="text-muted"><code>spa:aggregationExpression</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Expression corresponding to an aggregate value for each group.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Aggregation">Aggregation</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Expression">expression</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="assignedExpression" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">assigned expression</span>
+                  <small class="text-muted"><code>spa:assignedExpression</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Expression assigned to the bound variable by an extend operation.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Extend">Extend</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Expression">expression</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="boundVariable" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">bound variable</span>
+                  <small class="text-muted"><code>spa:boundVariable</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    The variable bound by an extend operation.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Extend">Extend</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://spinrdf.org/sp#Variable">sp:Variable</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="filterExpression" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">filter expression</span>
+                  <small class="text-muted"><code>spa:filterExpression</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Expression used for filter.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Filter">Filter</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Expression">expression</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="groupingExpression" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">grouping expression</span>
+                  <small class="text-muted"><code>spa:groupingExpression</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Each expression used for grouping.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Aggregation">Aggregation</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="#Expression">expression</a>.
+  
+                </p>
+              </div>
+            </div>
+          
             <div id="leftOp" class="card mb-3">
               <div class="card-header">
                 <h5 class="mb-0">
@@ -1116,6 +1327,34 @@
                   
       <strong>Range</strong>:
       <a href="#Op">Operation</a>.
+  
+                </p>
+              </div>
+            </div>
+          
+            <div id="projectedVariable" class="card mb-3">
+              <div class="card-header">
+                <h5 class="mb-0">
+                  <span class="mr-2">projected variable</span>
+                  <small class="text-muted"><code>spa:projectedVariable</code></small>
+                </h5>
+              </div>
+              <div class="card-body">
+                
+                  <p class="card-text">
+                    Projected variable.
+                  </p>
+                
+                <p class="card-text">
+                  
+                  
+                  
+      <strong>Domain</strong>:
+      <a href="#Project">Project</a>.
+  
+                  
+      <strong>Range</strong>:
+      <a href="http://spinrdf.org/sp#Variable">sp:Variable</a>.
   
                 </p>
               </div>
@@ -1182,37 +1421,6 @@
           
 
           <h2 id="dtPropList">Datatype properties</h2>
-          
-            <div id="ac:sampleRate" class="card mb-3">
-              <div class="card-header">
-                <h5 class="mb-0">
-                  <span class="mr-2">sample rate</span>
-                  <small class="text-muted"><code>ac:sampleRate</code></small>
-                </h5>
-              </div>
-              <div class="card-body">
-                
-                  <p class="card-text">
-                    Associates a digital signal to its sample rate.
-                  </p>
-                
-                <p class="card-text">
-                  
-                  
-      <strong>Sub-Properties</strong>:
-      <a href="mo:sample_rate">mo:sample_rate</a>.
-  
-                  
-      <strong>Domain</strong>:
-      <a href="ac:DigitalSignal">ac:DigitalSignal</a>.
-  
-                  
-      <strong>Range</strong>:
-      <a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a>.
-  
-                </p>
-              </div>
-            </div>
           
 
         </div>
