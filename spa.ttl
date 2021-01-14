@@ -1,6 +1,8 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix w3i: <https://w3id.org/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix terms: <http://purl.org/dc/terms/>.
+@prefix bibo: <http://purl.org/ontology/bibo/>.
 @prefix v: <http://purl.org/vocab/vann/>.
 @prefix n0: <http://xmlns.com/foaf/0.1/>.
 @prefix sp: <https://w3id.org/sparql-algebra-ontology#>.
@@ -9,8 +11,37 @@
 
 w3i:sparql-algebra-ontology
     a owl:Ontology;
+    terms:bibliographicCitation
+            [
+                a bibo:AcademicArticle;
+                terms:isPartOf
+                        [
+                            a bibo:Proceedings;
+                            terms:title
+                                """Proceedings of the 10th Alberto Mendelzon International Workshop on Foundations of Data Management, Panama City, Panama, May 8-10, 2016
+""";
+                            bibo:shortTitle "Proc. AMW 2016";
+                            bibo:volume 1644
+                        ];
+                terms:issued 2016;
+                terms:publisher "CEUR-WS.org";
+                terms:title
+                "An RDF Vocabulary for Meta-Programming with SPARQL Algebra";
+                bibo:authorList
+                        [
+                            rdf:first "Miguel Ceriani";
+                            rdf:rest
+                                    [
+                                        rdf:first "Alejandro A. Vaisman";
+                                        rdf:rest rdf:nil
+                                    ]
+                        ];
+                bibo:number 12;
+                bibo:status "http://purl.org/ontology/bibo/status/published";
+                bibo:uri "http://ceur-ws.org/Vol-1644/paper12.pdf"
+            ];
     terms:created "2016/05/02";
-    terms:date "2021/01/11";
+    terms:date "2021/01/14";
     terms:description
         """An RDF schema used to represent SPARQL algebra as RDF.
 """;

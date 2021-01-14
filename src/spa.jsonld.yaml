@@ -5,13 +5,31 @@ type: owl:Ontology
 preferredNamespaceUri: https://w3id.org/sparql-algebra-ontology#
 preferredNamespacePrefix: spa
 created: 2016/05/02
-date: 2021/01/11
+date: 2021/01/14
 descr: >
   An RDF schema used to represent SPARQL algebra as RDF.
 title: SPARQL Algebra Ontology
 versionInfo: 'Revision: 1.1.0'
 maker:
   - {name: Miguel Ceriani, label: Miguel Ceriani, id: mailto:miguel.ceriani@gmail.com}
+bibliographicCitation:
+  type: bibo:AcademicArticle
+  authorList:
+    - Miguel Ceriani
+    - Alejandro A. Vaisman
+  title: An RDF Vocabulary for Meta-Programming with SPARQL Algebra
+  publisher: CEUR-WS.org
+  status: http://purl.org/ontology/bibo/status/published
+  issued: 2016
+  number: 12
+  uri: http://ceur-ws.org/Vol-1644/paper12.pdf
+  isPartOf:
+    type: bibo:Proceedings
+    title: >
+      Proceedings of the 10th Alberto Mendelzon International Workshop on
+      Foundations of Data Management, Panama City, Panama, May 8-10, 2016
+    shortTitle: Proc. AMW 2016
+    volume: 1644
 defines:
 
   - id: spa:Op

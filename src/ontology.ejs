@@ -122,15 +122,30 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
 
           <p><%= ontology.descr %></p>
 
+          <h2 id="pubs">Publications</h2>
+          <p>
+            <% {
+              let bib = ontology.bibliographicCitation; %>
+              <li>
+                <%= bib.authorList %>
+                <a href="<%= bib.uri %>"><strong><%= bib.title %></strong></a>
+                <%= bib.isPartOf.shortTitle %>
+              </li>
+            <% } %>
+          </p>
+
+          <h2 id="pubs">Index of Terms</h2>
           <p>
             <% localList('Classes', filterByType(ontology.defines, 'owl:Class')); %>
           </p>
           <p>
             <% localList('Object Properties', filterByType(ontology.defines, 'owl:ObjectProperty')); %>
           </p>
-          <p>
-            <% localList('Datatype Properties', filterByType(ontology.defines, 'owl:DatatypeProperty')); %>
-          </p>
+          <% if (filterByType(ontology.defines, 'owl:DatatypeProperty').length > 0) { %>
+            <p>
+              <% localList('Datatype Properties', filterByType(ontology.defines, 'owl:DatatypeProperty')); %>
+            </p>
+          <% } %>
 
           <h2 id="classList">Classes</h2>
           <% _.forIn(filterByType(ontology.defines, 'owl:Class'), (clazz) => { %>
@@ -201,30 +216,32 @@ const showCodeProperty = (propertyLabel, propertyValue) => {
             </div>
           <% }); %>
 
-          <h2 id="dtPropList">Datatype properties</h2>
-          <% _.forIn(filterByType(ontology.defines, 'owl:DatatypeProperty'), (prop) => { %>
-            <div id="<%= htmlId(prop.id) %>" class="card mb-3">
-              <div class="card-header">
-                <h5 class="mb-0">
-                  <span class="mr-2"><%= label(prop) %></span>
-                  <small class="text-muted"><code><%= prefixedFromId(prop.id) %></code></small>
-                </h5>
-              </div>
-              <div class="card-body">
-                <% if (prop.comment) { %>
+          <% if (filterByType(ontology.defines, 'owl:DatatypeProperty').length > 0) { %>
+            <h2 id="dtPropList">Datatype properties</h2>
+            <% _.forIn(filterByType(ontology.defines, 'owl:DatatypeProperty'), (prop) => { %>
+              <div id="<%= htmlId(prop.id) %>" class="card mb-3">
+                <div class="card-header">
+                  <h5 class="mb-0">
+                    <span class="mr-2"><%= label(prop) %></span>
+                    <small class="text-muted"><code><%= prefixedFromId(prop.id) %></code></small>
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <% if (prop.comment) { %>
+                    <p class="card-text">
+                      <%= prop.comment %>
+                    </p>
+                  <% } %>
                   <p class="card-text">
-                    <%= prop.comment %>
+                    <% localList("Super-Properties", prop.subPropertyOf); %>
+                    <% localList("Sub-Properties", prop.superPropertyOf); %>
+                    <% localList("Domain", prop.domain); %>
+                    <% localList("Range", prop.range); %>
                   </p>
-                <% } %>
-                <p class="card-text">
-                  <% localList("Super-Properties", prop.subPropertyOf); %>
-                  <% localList("Sub-Properties", prop.superPropertyOf); %>
-                  <% localList("Domain", prop.domain); %>
-                  <% localList("Range", prop.range); %>
-                </p>
+                </div>
               </div>
-            </div>
-          <% }); %>
+            <% }); %>
+          <% } %>
 
         </div>
       </div>

@@ -12,6 +12,7 @@ dcterms: http://purl.org/dc/terms/
 skos: http://www.w3.org/2004/02/skos/core#
 vann: http://purl.org/vocab/vann/
 cc: http://web.resource.org/cc/
+bibo: http://purl.org/ontology/bibo/
 
 sp: http://spinrdf.org/sp#
 
@@ -25,6 +26,10 @@ domain: {'@id': rdfs:domain, '@type': '@id'}
 domainOf: {'@reverse': rdfs:domain, '@type': '@id'}
 range: {'@id': rdfs:range, '@type': '@id'}
 rangeOf: {'@reverse': rdfs:range, '@type': '@id'}
+
+first: rdf:first
+rest: rdf:rest
+nil: rdf:nil
 
 onProperty: {'@id': owl:onProperty, '@type': '@id'}
 onClass: {'@id': owl:onClass, '@type': '@id'}
@@ -55,3 +60,21 @@ descr: dcterms:description
 title: dcterms:title
 created: dcterms:created
 date: dcterms:date
+
+bibliographicCitation: dcterms:bibliographicCitation
+authorList: {'@id': bibo:authorList, '@container': '@list'}
+volume: bibo:volume
+number: bibo:number
+presentedAt: bibo:presentedAt
+isPartOf: dcterms:isPartOf
+issued: dcterms:issued
+publisher: dcterms:publisher
+uri: bibo:uri
+status: bibo:status
+shortTitle: bibo:shortTitle
+
+AcademicArticle: bibo:AcademicArticle
+Proceedings: bibo:Proceedings
+Conference: bibo:Conference
+Workshop: bibo:Workshop
+

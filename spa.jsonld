@@ -11,6 +11,7 @@
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "vann": "http://purl.org/vocab/vann/",
       "cc": "http://web.resource.org/cc/",
+      "bibo": "http://purl.org/ontology/bibo/",
       "sp": "http://spinrdf.org/sp#",
       "id": "@id",
       "type": "@type",
@@ -46,6 +47,9 @@
          "@reverse": "rdfs:range",
          "@type": "@id"
       },
+      "first": "rdf:first",
+      "rest": "rdf:rest",
+      "nil": "rdf:nil",
       "onProperty": {
          "@id": "owl:onProperty",
          "@type": "@id"
@@ -111,14 +115,68 @@
       "descr": "dcterms:description",
       "title": "dcterms:title",
       "created": "dcterms:created",
-      "date": "dcterms:date"
+      "date": "dcterms:date",
+      "bibliographicCitation": "dcterms:bibliographicCitation",
+      "authorList": {
+         "@id": "bibo:authorList",
+         "@container": "@list"
+      },
+      "volume": "bibo:volume",
+      "number": "bibo:number",
+      "presentedAt": "bibo:presentedAt",
+      "isPartOf": "dcterms:isPartOf",
+      "issued": "dcterms:issued",
+      "publisher": "dcterms:publisher",
+      "uri": "bibo:uri",
+      "status": "bibo:status",
+      "shortTitle": "bibo:shortTitle",
+      "AcademicArticle": "bibo:AcademicArticle",
+      "Proceedings": "bibo:Proceedings",
+      "Conference": "bibo:Conference",
+      "Workshop": "bibo:Workshop"
    },
    "@graph": [
       {
+         "id": "_:b0xb0",
+         "type": "AcademicArticle",
+         "isPartOf": {
+            "id": "_:b0xb1"
+         },
+         "issued": {
+            "type": "xsd:integer",
+            "@value": "2016"
+         },
+         "publisher": "CEUR-WS.org",
+         "title": "An RDF Vocabulary for Meta-Programming with SPARQL Algebra",
+         "authorList": [
+            "Miguel Ceriani",
+            "Alejandro A. Vaisman"
+         ],
+         "number": {
+            "type": "xsd:integer",
+            "@value": "12"
+         },
+         "status": "http://purl.org/ontology/bibo/status/published",
+         "uri": "http://ceur-ws.org/Vol-1644/paper12.pdf"
+      },
+      {
+         "id": "_:b0xb1",
+         "type": "Proceedings",
+         "title": "Proceedings of the 10th Alberto Mendelzon International Workshop on Foundations of Data Management, Panama City, Panama, May 8-10, 2016\n",
+         "shortTitle": "Proc. AMW 2016",
+         "volume": {
+            "type": "xsd:integer",
+            "@value": "1644"
+         }
+      },
+      {
          "id": "sparql-algebra-ontology",
          "type": "owl:Ontology",
+         "bibliographicCitation": {
+            "id": "_:b0xb0"
+         },
          "created": "2016/05/02",
-         "date": "2021/01/11",
+         "date": "2021/01/14",
          "descr": "An RDF schema used to represent SPARQL algebra as RDF.\n",
          "title": "SPARQL Algebra Ontology",
          "preferredNamespacePrefix": "spa",

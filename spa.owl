@@ -1,13 +1,37 @@
 <rdf:RDF
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  xmlns:terms="http://purl.org/dc/terms/"
+ xmlns:bibo="http://purl.org/ontology/bibo/"
  xmlns:v="http://purl.org/vocab/vann/"
  xmlns:owl="http://www.w3.org/2002/07/owl#"
  xmlns:n0="http://xmlns.com/foaf/0.1/"
  xmlns:rd="http://www.w3.org/2000/01/rdf-schema#">
     <rdf:Description rdf:about="https://w3id.org/sparql-algebra-ontology">
+        <terms:bibliographicCitation rdf:parseType="Resource">
+                <terms:isPartOf rdf:parseType="Resource">
+                        <terms:title>Proceedings of the 10th Alberto Mendelzon International Workshop on Foundations of Data Management, Panama City, Panama, May 8-10, 2016
+</terms:title>
+                        <bibo:shortTitle>Proc. AMW 2016</bibo:shortTitle>
+                        <bibo:volume rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1644</bibo:volume>
+                        <rdf:type rdf:resource="http://purl.org/ontology/bibo/Proceedings"/>
+                    </terms:isPartOf>
+                <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2016</terms:issued>
+                <terms:publisher>CEUR-WS.org</terms:publisher>
+                <terms:title>An RDF Vocabulary for Meta-Programming with SPARQL Algebra</terms:title>
+                <bibo:authorList rdf:parseType="Resource">
+                        <rdf:first>Miguel Ceriani</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                                <rdf:first>Alejandro A. Vaisman</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:rest>
+                    </bibo:authorList>
+                <bibo:number rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</bibo:number>
+                <bibo:status>http://purl.org/ontology/bibo/status/published</bibo:status>
+                <bibo:uri>http://ceur-ws.org/Vol-1644/paper12.pdf</bibo:uri>
+                <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+            </terms:bibliographicCitation>
         <terms:created>2016/05/02</terms:created>
-        <terms:date>2021/01/11</terms:date>
+        <terms:date>2021/01/14</terms:date>
         <terms:description>An RDF schema used to represent SPARQL algebra as RDF.
 </terms:description>
         <terms:title>SPARQL Algebra Ontology</terms:title>

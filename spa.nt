@@ -176,8 +176,9 @@
 <https://w3id.org/sparql-algebra-ontology#tuple> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/sparql-algebra-ontology> .
 <https://w3id.org/sparql-algebra-ontology#tuple> <http://www.w3.org/2000/01/rdf-schema#label> "tuple" .
 <https://w3id.org/sparql-algebra-ontology#tuple> <http://www.w3.org/2000/01/rdf-schema#range> <http://spinrdf.org/sp#Tuple> .
+<https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/bibliographicCitation> _:b0xb0 .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/created> "2016/05/02" .
-<https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/date> "2021/01/11" .
+<https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/date> "2021/01/14" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/description> "An RDF schema used to represent SPARQL algebra as RDF.\n" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/dc/terms/title> "SPARQL Algebra Ontology" .
 <https://w3id.org/sparql-algebra-ontology> <http://purl.org/vocab/vann/preferredNamespacePrefix> "spa" .
@@ -187,3 +188,20 @@
 <https://w3id.org/sparql-algebra-ontology> <http://xmlns.com/foaf/0.1/maker> <mailto:miguel.ceriani@gmail.com> .
 <mailto:miguel.ceriani@gmail.com> <http://www.w3.org/2000/01/rdf-schema#label> "Miguel Ceriani" .
 <mailto:miguel.ceriani@gmail.com> <http://xmlns.com/foaf/0.1/name> "Miguel Ceriani" .
+_:b0xb0 <http://purl.org/dc/terms/isPartOf> _:b0xb1 .
+_:b0xb0 <http://purl.org/dc/terms/issued> "2016"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:b0xb0 <http://purl.org/dc/terms/publisher> "CEUR-WS.org" .
+_:b0xb0 <http://purl.org/dc/terms/title> "An RDF Vocabulary for Meta-Programming with SPARQL Algebra" .
+_:b0xb0 <http://purl.org/ontology/bibo/authorList> _:b0xb2 .
+_:b0xb0 <http://purl.org/ontology/bibo/number> "12"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:b0xb0 <http://purl.org/ontology/bibo/status> "http://purl.org/ontology/bibo/status/published" .
+_:b0xb0 <http://purl.org/ontology/bibo/uri> "http://ceur-ws.org/Vol-1644/paper12.pdf" .
+_:b0xb0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/bibo/AcademicArticle> .
+_:b0xb1 <http://purl.org/dc/terms/title> "Proceedings of the 10th Alberto Mendelzon International Workshop on Foundations of Data Management, Panama City, Panama, May 8-10, 2016\n" .
+_:b0xb1 <http://purl.org/ontology/bibo/shortTitle> "Proc. AMW 2016" .
+_:b0xb1 <http://purl.org/ontology/bibo/volume> "1644"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:b0xb1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/ontology/bibo/Proceedings> .
+_:b0xb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Miguel Ceriani" .
+_:b0xb2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:b0xb3 .
+_:b0xb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Alejandro A. Vaisman" .
+_:b0xb3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
